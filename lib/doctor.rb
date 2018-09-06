@@ -8,7 +8,7 @@ class Doctor
     @appointments = []
   end
 
-  def self.all()
+  def self.all
     @@all
   end
 
@@ -17,13 +17,13 @@ class Doctor
     @appointments << new_app
     return new_app
   end
-   def appointments()
+   def appointments
     Appointment.all.select do |app|
       app.doctor == self
     end
   end
 
-  def patients()
+  def patients
     puts @appointments
     @appointments.collect {|app| app.patient}
   end
